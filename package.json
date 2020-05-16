@@ -1,0 +1,36 @@
+{
+  "name": "rooter",
+  "version": "1.0.0",
+  "description": "a simple modern js router",
+  "main": "router.js",
+  "scripts": {
+    "dev": "./node_modules/.bin/parcel watch rooter.js",
+    "build": "./node_modules/.bin/parcel build rooter.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mum-never-proud/rooter.git"
+  },
+  "keywords": [
+    "router",
+    "js",
+    "vanilla",
+    "modern",
+    "route",
+    "history",
+    "hash"
+  ],
+  "author": "mum-never-proud",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mum-never-proud/rooter/issues"
+  },
+  "homepage": "https://github.com/mum-never-proud/rooter#readme",
+  "devDependencies": {
+    "parcel": "1.12.4"
+  },
+  "dependencies": {
+    "jest": "26.0.1"
+  }
+}
