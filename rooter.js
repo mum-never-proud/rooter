@@ -47,8 +47,6 @@ class Rooter {
     if (match) {
       return match[0];
     }
-
-    return '/';
   }
 
   navigate(path) {

@@ -195,8 +195,6 @@ var Rooter = /*#__PURE__*/function () {
       if (match) {
         return match[0];
       }
-
-      return '/';
     }
   }, {
     key: "navigate",
