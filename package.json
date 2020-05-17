@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "./node_modules/.bin/parcel watch rooter.js --global rooter",
     "build": "./node_modules/.bin/parcel build rooter.js --global rooter",
-    "test": "npm test"
+    "test": "./node_modules/.bin/jest",
+    "test:silent": "./node_modules/.bin/jest --silent",
+    "test:coverage": "./node_modules/.bin/jest --coverage",
+    "test:coverage:silent": "./node_modules/.bin/jest --coverage --silent"
   },
   "repository": {
     "type": "git",

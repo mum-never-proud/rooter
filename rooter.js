@@ -38,8 +38,17 @@ class Rooter {
   }
 
   currentPath() {
-    return this.mode === 'history' ? window.location.pathname.replace(/\?(.*)/, '')
-      : (window.location.href.match(/#(.*)/) || [])[0] || '/';
+    if (this.mode === 'history') {
+      return window.location.pathname.replace(/\?(.*)/, '');
+    }
+
+    const match = window.location.href.match(/#(.*)/);
+
+    if (match) {
+      return match[0];
+    }
+
+    return '/';
   }
 
   navigate(path) {
@@ -54,6 +63,8 @@ class Rooter {
   }
 
   bind() {
+    this.unbind();
+
     window.addEventListener('pushstate', this.routeHandler);
     window.addEventListener('popstate', this.routeHandler);
     this.routeHandler();
