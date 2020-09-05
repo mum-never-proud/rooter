@@ -1,6 +1,6 @@
 // you can ignore warnings, or use --silent if it bothers you ¯\_(ツ)_/¯
 
-const Rooter = require('../rooter');
+const Rooter = require('../src/rooter');
 
 describe('rooter test', () => {
   it('should throw error when invalid mode is supplied', () => {

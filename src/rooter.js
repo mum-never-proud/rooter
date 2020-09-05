@@ -7,7 +7,7 @@ function isValidMode(mode) {
 class Rooter {
   constructor(options = {}) {
     if (!isValidMode(options.mode)) {
-      throw new Error('invalid mode, try history or hash');
+      throw new Error('invalid mode, available modes [history, hash]');
     }
 
     this.routes = [];
@@ -26,13 +26,13 @@ class Rooter {
       throw new Error('callback must be a function');
     }
 
-    this.routes.push({url, callback});
+    this.routes.push({ url, callback });
 
     return this;
   }
 
   forget(url) {
-    this.routes = this.routes.filter(route => route.url !== url);
+    this.routes = this.routes.filter((route) => route.url !== url);
 
     return this;
   }
@@ -47,6 +47,8 @@ class Rooter {
     if (match) {
       return match[0];
     }
+
+    return null;
   }
 
   navigate(path) {
@@ -78,12 +80,13 @@ class Rooter {
   }
 
   routeHandler() {
-    const pathName = this.currentPath(),
-      [currentRoute] = this.routes.filter(route => route.url === pathName);
+    const pathName = this.currentPath();
+    const [currentRoute] = this.routes.filter((route) => route.url === pathName);
 
-     if (currentRoute) {
+    if (currentRoute) {
       currentRoute.callback();
     } else {
+      // eslint-disable-next-line no-console
       console.warn(`no handler specified for '${pathName}'`);
     }
   }

@@ -1,13 +1,13 @@
-const Rooter = require('../rooter');
+const Rooter = require('../src/rooter');
 
 describe('rooter hash mode', () => {
   let rooter;
 
   beforeAll(() => {
     rooter = new Rooter({ mode: 'hash' });
-    window.location.href = window.location.href+'#';
+    window.location.href = `${window.location.href}#`;
 
-    rooter.get('#', jest.fn());  // to avoid too many console warns in tests
+    rooter.get('#', jest.fn()); // to avoid too many console warns in tests
     rooter.bind();
   });
 

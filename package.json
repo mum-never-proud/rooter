@@ -1,15 +1,13 @@
 {
   "name": "rooter",
   "version": "1.0.0",
-  "description": "a simple modern js router",
-  "main": "router.js",
+  "description": "A simple js router",
+  "main": "./dist/rooter.min.js",
   "scripts": {
-    "dev": "./node_modules/.bin/parcel watch rooter.js --global rooter",
-    "build": "./node_modules/.bin/parcel build rooter.js --global rooter",
-    "test": "./node_modules/.bin/jest",
-    "test:silent": "./node_modules/.bin/jest --silent",
-    "test:coverage": "./node_modules/.bin/jest --coverage",
-    "test:coverage:silent": "./node_modules/.bin/jest --coverage --silent"
+    "dev": "parcel watch ./src/rooter.js --global rooter -o rooter.min.js",
+    "build": "parcel build ./src/rooter.js --global rooter -o rooter.min.js",
+    "test": "jest",
+    "test-coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -31,6 +29,10 @@
   },
   "homepage": "https://github.com/mum-never-proud/rooter#readme",
   "devDependencies": {
+    "eslint": "7.8.1",
+    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-jest": "24.0.0",
     "parcel": "1.12.4"
   },
   "dependencies": {

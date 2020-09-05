@@ -1,4 +1,4 @@
-const Rooter = require('../rooter');
+const Rooter = require('../src/rooter');
 
 describe('rooter history mode', () => {
   let rooter;
@@ -6,12 +6,14 @@ describe('rooter history mode', () => {
   beforeEach(() => {
     rooter = new Rooter();
 
-    rooter.get('/', jest.fn());  // to avoid too many console warns in tests
+    rooter.get('/', jest.fn()); // to avoid too many console warns in tests
+    rooter.get('/path', jest.fn());
     rooter.bind();
   });
 
   afterEach(() => {
     rooter.navigate('/');
+    rooter.unbind();
   });
 
   it('should navigate to path', () => {
